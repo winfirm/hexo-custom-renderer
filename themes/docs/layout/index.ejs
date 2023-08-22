@@ -1,0 +1,14 @@
+<% if (site.posts && site.posts.length > 0) { %>
+    <section class="related-posts">
+        <h2>Archives:</h2>
+        <ul>
+        <%
+		  site.posts.each(function(post) {
+		%>
+                <li><a href="<%- url_for(post.path) %>"><%= post.title || url_for(post.path) %></a></li>
+		<%
+          });
+        %>
+        </ul>
+
+<% } %>
